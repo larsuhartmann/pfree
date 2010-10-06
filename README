@@ -1,0 +1,6 @@
+This is the README for pfree, a freely redistributable, portable
+implementation of the free command found on Linux systems
+
+See the file:
+    INSTALL     for instructions on how to build and install pfree.
+    LICENSE     for the copyright and redistribution terms.
