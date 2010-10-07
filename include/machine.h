@@ -41,8 +41,8 @@ typedef struct pf_meminfo {
      int64_t mem_used;          /* bytes of used memory */
      int64_t mem_free;          /* bytes of free memory */
      int64_t mem_shared;        /* bytes of shared memory */
-     int64_t mem_buffers;       /* bytes of buffers */
-     int64_t mem_cached;        /* bytes of caches */
+     int64_t buffers;           /* buffered bytes */
+     int64_t cached;            /* cached bytes */
      int64_t swap_total;        /* bytes of total swap */
      int64_t swap_used;         /* bytes of used swap */
      int64_t swap_free;         /* bytes of free swap */
