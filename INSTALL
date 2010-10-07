@@ -1,0 +1,13 @@
+pfree Installation instructions
+*******************************
+
+The following steps should suffice to install this software:
+
+1. ./configure (if your system already has a free(1) utility, you
+   should consider using the --program-prefix switch to let pfree
+   coexist with the already installed free utility.)
+
+2. make
+
+3. make install
+                           
