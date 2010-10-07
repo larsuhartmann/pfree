@@ -34,6 +34,7 @@
  * doesn't need to be changed for any module */
 
 #include <stdint.h>
+#include <stdbool.h>
 
 /* this struct is filled by machine_init */
 typedef struct pf_meminfo {
@@ -46,6 +47,8 @@ typedef struct pf_meminfo {
      int64_t swap_total;        /* bytes of total swap */
      int64_t swap_used;         /* bytes of used swap */
      int64_t swap_free;         /* bytes of free swap */
+     bool with_bcline;          /* wheter pfree should print the -/+
+                                 * buffers/cache line */
 } pf_meminfo_t;
 
 /* this is the actual interface to the machine dependent code, this

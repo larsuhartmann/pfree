@@ -18,7 +18,8 @@ int main(int argc, char *argv[])
             "buffers", 11, "cached");
      printf(format2, 14, m.mem_total, 11, m.mem_used, 11, m.mem_free, 11,
             m.mem_shared, 11, m.buffers, 11, m.cached);
-     printf(format3, 11, m.mem_used - ( m.buffers + m.cached ),
-            11, m.mem_free + ( m.buffers + m.cached ));
+     if ( m.with_bcline )
+          printf(format3, 11, m.mem_used - ( m.buffers + m.cached ),
+                 11, m.mem_free + ( m.buffers + m.cached ));
      printf(format4, 13, m.swap_total, 11, m.swap_used, 11, m.swap_free);
 }

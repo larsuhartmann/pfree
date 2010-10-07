@@ -10,11 +10,18 @@ AC_PROG_CC
 
 AC_CONFIG_FILES(Makefile)
 
+ldflags=""
+
 case "$target" in
 *linux*)
         machine=linux ;;
+*freebsd*)
+        machine=freebsd
+        ldflags="-lkvm"
+        ;;
 esac
 
 AC_CONFIG_LINKS(host.c:machine/$machine.c)
+AC_SUBST(ldflags)
 
 AC_OUTPUT
