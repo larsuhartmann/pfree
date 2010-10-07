@@ -38,8 +38,6 @@
 #include <stdlib.h>
 #include <fcntl.h>
 #include <string.h>
-#include <stdio.h>
-#include <inttypes.h>
 #include <assert.h>
 
 #include <machine.h>
@@ -85,10 +83,6 @@ machine_init(pf_meminfo_t *ret)
           }
           start = end+1;
           start = strchr(start, '\n');
-          if (! start) {
-               printf("%s\n%s\n", t, end+1);
-               return -1;
-          }
           start++;
      }
      ret->mem_used = ret->mem_total - ret->mem_free;
