@@ -7,3 +7,6 @@ AM_CPPFLAGS = -I$(top_srcdir)/include
 METASOURCES = AUTO
 
 EXTRA_DIST = machine include
+
+valgrind: $(PROGRAMS)
+	valgrind -q --track-fds=yes $(PROGRAMS)
