@@ -1,6 +1,6 @@
 #include <pfree.h>
 
-#define optstring       "bkmg"
+#define optstring       "bkmgtVo"
 
 int main(int argc, char *argv[])
 {
@@ -22,9 +22,19 @@ int main(int argc, char *argv[])
           case 'g':
                o.ushift=30;
                break;
+          case 'o':
+               o.with_bcline=false;
+          case 't':
+               o.with_total=true;
+               break;
+          case 'V':
+               meminfo_version();
+          case '?':
+          default:
+               meminfo_usage(argv[0]);
           }
      }
-     
+
      if ( machine_init(&m) < 0 )
           perror("Error while fetching memory information");
 
