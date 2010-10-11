@@ -1,6 +1,6 @@
 bin_PROGRAMS=free
-free_SOURCES=free.c
-nodist_free_SOURCES=host.c
+free_SOURCES=src/free.c
+nodist_free_SOURCES=src/host.c
 free_LDFLAGS=$(ldflags)
 
 AM_CPPFLAGS = -I$(top_srcdir)/include

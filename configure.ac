@@ -21,7 +21,7 @@ case "$target" in
         ;;
 esac
 
-AC_CONFIG_LINKS(host.c:machine/$machine.c)
+AC_CONFIG_LINKS(src/host.c:machine/$machine.c)
 AC_SUBST(ldflags)
 
 AC_OUTPUT
