@@ -1,6 +1,7 @@
 CHANGELOG:
 ==========
 
+Version 2
   * added additional commandline switches (tVo).
   * added commandline switches(bkmg) to set unit of displayed values.
 

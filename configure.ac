@@ -1,4 +1,4 @@
-AC_INIT([pfree], [1], [lars@chaotika.org])
+AC_INIT([pfree], [2], [lars@chaotika.org])
 
 AC_CONFIG_AUX_DIR(config)
 AC_CANONICAL_TARGET
