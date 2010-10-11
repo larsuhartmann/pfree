@@ -44,6 +44,7 @@
 
 #define MEMINFO_FILE    "/proc/meminfo"
 #define BUFSIZE         2048
+#define K2B             1024
 
 int
 machine_init(pf_meminfo_t *ret)
@@ -63,22 +64,22 @@ machine_init(pf_meminfo_t *ret)
                return -1;
           *end = '\0';
           if ( strncmp(start, "MemTotal", 8) == 0 ) {
-               ret->mem_total = strtoll(end+1, NULL, 10);
+               ret->mem_total = strtoll(end+1, NULL, 10) * K2B;
                ++done;
           } else if ( strncmp(start, "MemFree", 8) == 0 ) {
-               ret->mem_free = strtoll(end+1, NULL, 10);
+               ret->mem_free = strtoll(end+1, NULL, 10) * K2B;
                ++done;
           } else if ( strncmp(start, "Buffers", 7) == 0 ) {
-               ret->buffers = strtoll(end+1, NULL, 10);
+               ret->buffers = strtoll(end+1, NULL, 10) * K2B;
                ++done;
           } else if ( strncmp(start, "Cached", 6) == 0 ) {
-               ret->cached = strtoll(end+1, NULL, 10);
+               ret->cached = strtoll(end+1, NULL, 10) * K2B;
                ++done;
           } else if ( strncmp(start, "SwapTotal", 9) == 0 ) {
-               ret->swap_total = strtoll(end+1, NULL, 10);
+               ret->swap_total = strtoll(end+1, NULL, 10) * K2B;
                ++done;
           } else if ( strncmp(start, "SwapFree", 9) == 0 ) {
-               ret->swap_free = strtoll(end+1, NULL, 10);
+               ret->swap_free = strtoll(end+1, NULL, 10) * K2B;
                ++done;
           }
           start = end+1;
