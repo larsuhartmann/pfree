@@ -36,6 +36,9 @@
 #include <stdint.h>
 #include <stdbool.h>
 
+/* default values for pf_meminfo struct */
+#define PF_MEMINFO_DEFAULT { 0, 0, 0, 0, 0, 0, 0, 0, 0, false }
+
 /* this struct is filled by machine_init */
 typedef struct pf_meminfo {
      uint64_t mem_total;        /* bytes of total memory */

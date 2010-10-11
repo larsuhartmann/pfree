@@ -51,16 +51,6 @@ machine_init(pf_meminfo_t *ret)
      struct kvm_swap swapinfo;
      kvm_t *kd;
 
-     ret->mem_total = 0;
-     ret->mem_used = 0;
-     ret->mem_free = 0;
-     ret->mem_shared = 0;
-     ret->buffers = 0;
-     ret->cached = 0;
-     ret->swap_total = 0;
-     ret->swap_used = 0;
-     ret->swap_free = 0;
-
      pagesize = getpagesize();
 
      sysctlbyname("vm.stats.vm.v_active_count", &ret->mem_used, &t, NULL, 0);
@@ -77,8 +67,6 @@ machine_init(pf_meminfo_t *ret)
      ret->swap_total *= pagesize;
      ret->swap_used *= pagesize;
      ret->swap_free = swapinfo.ksw_total - swapinfo.ksw_used;
-
-     ret->with_bcline = false;
 
      return 0;
 }

@@ -86,7 +86,6 @@ machine_init(pf_meminfo_t *ret)
           start++;
      }
      ret->mem_used = ret->mem_total - ret->mem_free;
-     ret->mem_shared = 0;
      ret->swap_used = ret->swap_total - ret->swap_free;
 
      ret->with_bcline = true;
