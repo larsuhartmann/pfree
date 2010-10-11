@@ -1,5 +1,5 @@
 bin_PROGRAMS=free
-free_SOURCES=src/free.c
+free_SOURCES=src/free.c src/meminfo_print.c
 nodist_free_SOURCES=src/host.c
 free_LDFLAGS=$(ldflags)
 
