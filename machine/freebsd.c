@@ -41,7 +41,7 @@
 
 #include <machine.h>
 
-#define DEVNULL_PATH "/dev/null"
+#define DEVNULL_PATH    "/dev/null"
 
 int
 machine_init(pf_meminfo_t *ret)
@@ -64,18 +64,18 @@ machine_init(pf_meminfo_t *ret)
      pagesize = getpagesize();
 
      sysctlbyname("vm.stats.vm.v_active_count", &ret->mem_used, &t, NULL, 0);
-     ret->mem_used = ret->mem_used * pagesize;
+     ret->mem_used *= pagesize;
      sysctlbyname("vm.stats.vm.v_free_count", &ret->mem_free, &t, NULL, 0);
-     ret->mem_free = ret->mem_free * pagesize;
+     ret->mem_free *= pagesize;
      ret->mem_total = ret->mem_free + ret->mem_used;
      sysctlbyname("vfs.bufspace", &ret->buffers, &t, NULL, 0);
      sysctlbyname("vm.stats.vm.v_cache_count", &ret->cached, &t, NULL, 0);
-     ret->cached = ret->cached * pagesize;
+     ret->cached *= pagesize;
 
      kd = kvm_open(NULL, DEVNULL_PATH, NULL, O_RDONLY, "kvm_open");
      kvm_getswapinfo(kd, &swapinfo, 1, 0);
-     ret->swap_total = swapinfo.ksw_total * pagesize;
-     ret->swap_used = swapinfo.ksw_used * pagesize;
+     ret->swap_total *= pagesize;
+     ret->swap_used *= pagesize;
      ret->swap_free = swapinfo.ksw_total - swapinfo.ksw_used;
 
      ret->with_bcline = false;

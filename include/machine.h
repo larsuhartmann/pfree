@@ -38,15 +38,15 @@
 
 /* this struct is filled by machine_init */
 typedef struct pf_meminfo {
-     int64_t mem_total;         /* bytes of total memory */
-     int64_t mem_used;          /* bytes of used memory */
-     int64_t mem_free;          /* bytes of free memory */
-     int64_t mem_shared;        /* bytes of shared memory */
-     int64_t buffers;           /* buffered bytes */
-     int64_t cached;            /* cached bytes */
-     int64_t swap_total;        /* bytes of total swap */
-     int64_t swap_used;         /* bytes of used swap */
-     int64_t swap_free;         /* bytes of free swap */
+     uint64_t mem_total;        /* bytes of total memory */
+     uint64_t mem_used;         /* bytes of used memory */
+     uint64_t mem_free;         /* bytes of free memory */
+     uint64_t mem_shared;       /* bytes of shared memory */
+     uint64_t buffers;          /* buffered bytes */
+     uint64_t cached;           /* cached bytes */
+     uint64_t swap_total;       /* bytes of total swap */
+     uint64_t swap_used;        /* bytes of used swap */
+     uint64_t swap_free;        /* bytes of free swap */
      bool with_bcline;          /* wheter pfree should print the -/+
                                  * buffers/cache line */
 } pf_meminfo_t;

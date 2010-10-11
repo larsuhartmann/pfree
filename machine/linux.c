@@ -42,14 +42,14 @@
 
 #include <machine.h>
 
-#define MEMINFO_FILE "/proc/meminfo"
-#define BUFSIZE 2048
+#define MEMINFO_FILE    "/proc/meminfo"
+#define BUFSIZE         2048
 
 int
 machine_init(pf_meminfo_t *ret)
 {
      int meminfo, i, r, done;
-     char buf[BUFSIZE], *start, *end, *t;
+     char buf[BUFSIZE], *start, *end;
      
      if ( (meminfo = open(MEMINFO_FILE, O_RDONLY)) < 0 )
           return -1;
@@ -88,6 +88,8 @@ machine_init(pf_meminfo_t *ret)
      ret->mem_used = ret->mem_total - ret->mem_free;
      ret->mem_shared = 0;
      ret->swap_used = ret->swap_total - ret->swap_free;
+
+     ret->with_bcline = true;
 
      return 0;
 }
