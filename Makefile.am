@@ -11,3 +11,6 @@ EXTRA_DIST = machine include
 
 valgrind: $(PROGRAMS)
 	valgrind -q --track-fds=yes $(PROGRAMS)
+
+check-syntax:
+	$(COMPILE) -o nul -Wall -c -S ${CHK_SOURCES}
