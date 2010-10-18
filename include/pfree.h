@@ -6,7 +6,7 @@
 #include <config.h>
 #include <machine.h>
 
-#define PF_OPTIONS_DEFAULT { 10, true, true }
+#define PF_OPTIONS_DEFAULT { 10, true, true, 0, 0 }
 
 typedef struct pf_options {
      int ushift;        /* number of rightshifts needed to shift
@@ -14,6 +14,8 @@ typedef struct pf_options {
      bool with_bcline;  /* wheter pfree should print the -/+
                          * buffers/cache line */
      bool with_total;   /* wheter pfree should print a total line */
+     int wait_time;     /* time to wait (-s option) */
+     intmax_t count;    /* number of times to print output (-c option) */
 } pf_options_t;
 
 void
