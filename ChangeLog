@@ -1,6 +1,8 @@
 CHANGELOG:
 ==========
 
+  * disabled total line per default (Closes Bug #2)
+
 Version 3
   * added -s and -c option.
 

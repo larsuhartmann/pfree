@@ -6,7 +6,8 @@
 #include <config.h>
 #include <machine.h>
 
-#define PF_OPTIONS_DEFAULT { 10, true, true, 0, 0 }
+/* default values for pf_options_t */
+#define PF_OPTIONS_DEFAULT { 10, true, false, 0, 0 }
 
 typedef struct pf_options {
      int ushift;        /* number of rightshifts needed to shift
