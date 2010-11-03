@@ -34,6 +34,7 @@
 void
 meminfo_usage(char *bname)
 {
-     fprintf(stderr, "Usage: %s [-[b|k|m|g]otV[s delay][c count]]\n", bname);
+     fprintf(stderr, "Usage: %s [-b | -k | -m | -g] [-o -t] [-s delay]"
+                     "[-c count] [-V]\n", bname);
      exit(EXIT_FAILURE);
 }
