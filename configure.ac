@@ -8,7 +8,7 @@ AC_CONFIG_HEADERS(config.h)
 
 AC_PROG_CC
 
-AC_CONFIG_FILES(Makefile)
+AC_CONFIG_FILES(Makefile free.1)
 
 ldflags=""
 
@@ -21,7 +21,15 @@ case "$target" in
         ;;
 esac
 
+# check if program_prefix is set and provide it to AC_SUBST
+pfree_prefix=""
+if [[ "$program_prefix" != "NONE" ]]
+then
+        pfree_prefix="$program_prefix"
+fi
+
 AC_CONFIG_LINKS(src/host.c:machine/$machine.c)
 AC_SUBST(ldflags)
+AC_SUBST(pfree_prefix)
 
 AC_OUTPUT

@@ -4,6 +4,8 @@ free_SOURCES=src/free.c src/meminfo_print.c src/meminfo_ushift.c \
 nodist_free_SOURCES=src/host.c
 free_LDFLAGS=$(ldflags)
 
+man1_MANS = free.1
+
 AM_CPPFLAGS = -I$(top_srcdir)/include
 METASOURCES = AUTO
 
